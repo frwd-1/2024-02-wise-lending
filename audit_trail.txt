@@ -1,0 +1,44 @@
+WiseLending.sol	511
+WiseSecurity.sol	428
+MainHelper.sol	401
+WiseSecurityHelper.sol	347
+PendlePowerFarmToken.sol	333
+FeeManager.sol	304
+PendlePowerFarmLeverageLogic.sol	258
+OracleHelper.sol	250
+PendlePowerFarmController.sol	247
+WiseCore.sol	242
+WiseLendingDeclaration.sol	213
+WiseOracleHub.sol	180
+AaveHub.sol	173
+WiseLowLevelHelper.sol	168
+PendlePowerFarmDeclarations.sol	160
+PendlePowerFarmController/PendlePowerFarmControllerBase.sol	145
+AaveHelper.sol	144
+PositionNFTs.sol	143
+WiseSecurityDeclarations.sol	142
+PoolManager.sol	141
+FeeManagerHelper.sol	129
+PendlePowerFarmMathLogic.sol	123
+DeclarationsFeeManager.sol	117
+PendlePowerManager.sol	103
+PendlePowerFarmControllerHelper.sol	96
+PendlePowerFarm.sol	89
+PowerFarmNFTs.sol	84
+MinterReserver.sol	70
+PendleLpOracle.sol	66
+Declarations.sol	66
+PtOracleDerivative.sol	62
+Declarations.sol	56
+PtOraclePure.sol	54
+OwnableMaster.sol	52
+PendlePowerFarmTokenFactory.sol	49
+PendleChildLpOracle.sol	42
+FeeManagerEvents.sol	39 -- first pass complete, just events
+CustomOracleSetup.sol	29 -- first pass complete, possible issues
+SendValueHelper.sol	17 -- first pass complete, potential highs found
+WrapperHelper.sol	14 -- first pass complete, low risk
+CallOptionalReturn.sol	12 -- first pass complete, possible issues
+TransferHelper.sol	10 -- first pass complete
+AaveEvents.sol	10 -- first pass complete, low risk
+ApprovalHelper.sol	7 -- first pass complete

@@ -10,45 +10,34 @@ pragma solidity =0.8.24;
 // Notice: only to use this for PendleMarkets that has 18 decimals
 // if different amount of decimals - pass as argument to constructor
 
-contract PendleChildLpOracle is CustomOracleSetup  {
-
+contract PendleChildLpOracle is CustomOracleSetup {
     IPriceFeed public priceFeedPendleLpOracle;
     IPendleChildToken public pendleChildToken;
 
     uint8 constant DECIMALS_PRECISION = 18;
     uint256 private constant PRECISION_FACTOR_E18 = 1E18;
 
+    //@audit how would different decimals be passed as an arg to the constructor?
     constructor(
         address _pendleLpOracle,
         address _pendleChild
-    )
-        CustomOracleSetup()
-    {
-        priceFeedPendleLpOracle = IPriceFeed(
-            _pendleLpOracle
-        );
-        pendleChildToken = IPendleChildToken(
-            _pendleChild
-        );
+    ) CustomOracleSetup() {
+        priceFeedPendleLpOracle = IPriceFeed(_pendleLpOracle);
+        pendleChildToken = IPendleChildToken(_pendleChild);
     }
 
-    function latestAnswer()
-        public
-        view
-        returns (uint256)
-    {
-        return priceFeedPendleLpOracle.latestAnswer()
-            * pendleChildToken.totalLpAssets()
-            * PRECISION_FACTOR_E18
-            / pendleChildToken.totalSupply()
-            / PRECISION_FACTOR_E18;
+    //@audit oracle manipulation?
+    //@audit safemath? order of operations?
+    function latestAnswer() public view returns (uint256) {
+        return
+            (priceFeedPendleLpOracle.latestAnswer() *
+                pendleChildToken.totalLpAssets() *
+                PRECISION_FACTOR_E18) /
+            pendleChildToken.totalSupply() /
+            PRECISION_FACTOR_E18;
     }
 
-    function decimals()
-        external
-        pure
-        returns (uint8)
-    {
+    function decimals() external pure returns (uint8) {
         return DECIMALS_PRECISION;
     }
 
@@ -60,6 +49,7 @@ contract PendleChildLpOracle is CustomOracleSetup  {
             int256 answer,
             uint256 startedAt,
             uint256 updatedAt,
+            //@audit typo? answerd
             uint80 answerdInRound
         )
     {
@@ -88,9 +78,7 @@ contract PendleChildLpOracle is CustomOracleSetup  {
             uint80 answeredInRound
         )
     {
-        updatedAt = timeStampByRoundId[
-            _roundId
-        ];
+        updatedAt = timeStampByRoundId[_roundId];
 
         return (
             _roundId,

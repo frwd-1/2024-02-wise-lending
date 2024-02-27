@@ -4,8 +4,8 @@ pragma solidity =0.8.24;
 
 import "./CallOptionalReturn.sol";
 
+// @audit why does the IERC20 interface not need to be imported?
 contract ApprovalHelper is CallOptionalReturn {
-
     /**
      * @dev
      * Allows to execute safe approve for a token
@@ -14,16 +14,10 @@ contract ApprovalHelper is CallOptionalReturn {
         address _token,
         address _spender,
         uint256 _value
-    )
-        internal
-    {
+    ) internal {
         _callOptionalReturn(
             _token,
-            abi.encodeWithSelector(
-                IERC20.approve.selector,
-                _spender,
-                _value
-            )
+            abi.encodeWithSelector(IERC20.approve.selector, _spender, _value)
         );
     }
 }
