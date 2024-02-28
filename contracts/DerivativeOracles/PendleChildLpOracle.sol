@@ -17,7 +17,7 @@ contract PendleChildLpOracle is CustomOracleSetup {
     uint8 constant DECIMALS_PRECISION = 18;
     uint256 private constant PRECISION_FACTOR_E18 = 1E18;
 
-    //@audit how would different decimals be passed as an arg to the constructor?
+    //@audit how would different decimals be passed as an arg to the constructor? doesn't seem to be implemented
     constructor(
         address _pendleLpOracle,
         address _pendleChild

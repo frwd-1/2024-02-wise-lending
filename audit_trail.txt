@@ -33,7 +33,7 @@ Declarations.sol	56
 PtOraclePure.sol	54
 OwnableMaster.sol	52
 PendlePowerFarmTokenFactory.sol	49
-PendleChildLpOracle.sol	42
+PendleChildLpOracle.sol	42 -- first pass complete, likely issues (medium?)
 FeeManagerEvents.sol	39 -- first pass complete, just events
 CustomOracleSetup.sol	29 -- first pass complete, possible issues
 SendValueHelper.sol	17 -- first pass complete, potential highs found
