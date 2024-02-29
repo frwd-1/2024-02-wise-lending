@@ -28,6 +28,7 @@ contract PendleChildLpOracle is CustomOracleSetup {
 
     //@audit oracle manipulation?
     //@audit safemath? order of operations?
+    //@audit possible precision loss?
     function latestAnswer() public view returns (uint256) {
         return
             (priceFeedPendleLpOracle.latestAnswer() *
