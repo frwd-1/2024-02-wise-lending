@@ -31,7 +31,7 @@ Declarations.sol	66
 PtOracleDerivative.sol	62
 Declarations.sol	56
 PtOraclePure.sol	54
-OwnableMaster.sol	52
+OwnableMaster.sol	52 -- first pass complete, seems mostly ok, a bit weird, possible lows
 PendlePowerFarmTokenFactory.sol	49
 PendleChildLpOracle.sol	42 -- first pass complete, likely issues (medium?)
 FeeManagerEvents.sol	39 -- first pass complete, just events

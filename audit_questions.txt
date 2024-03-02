@@ -1,0 +1,1 @@
+1. if the master role / ownership is renounced, can the protocol handle that? what about functions that require an "owner" to call them?
